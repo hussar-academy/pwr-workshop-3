@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+  strong Title:
+  = @dig.title
+p
+  strong Body:
+  = @dig.body
+p
+  strong Owner:
+  = @dig.owner.email
+
+= link_to 'Edit', edit_dig_path(@dig)
+'|
+= link_to 'Back', digs_path

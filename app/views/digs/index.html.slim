@@ -1,0 +1,25 @@
+h1 Listing digs
+
+table
+  thead
+    tr
+      th Title
+      th Body
+      th Owner
+      th
+      th
+      th
+
+  tbody
+    - @digs.each do |dig|
+      tr
+        td = dig.title
+        td = dig.body
+        td = dig.owner.email
+        td = link_to 'Show', dig
+        td = link_to 'Edit', edit_dig_path(dig)
+        td = link_to 'Destroy', dig, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Dig', new_dig_path
