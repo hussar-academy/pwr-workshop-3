@@ -1,0 +1,18 @@
+= form_for @comment do |f|
+  - if @comment.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@comment.errors.count, "error")} prohibited this comment from being saved:"
+      ul
+        - @comment.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :body
+    = f.text_area :body
+  .field
+    = f.label :dig
+    = f.select :dig_id, options_from_collection_for_select(Dig.all, :id, :title)
+  .field
+    = f.label :owner
+    = f.select :owner_id, options_from_collection_for_select(User.all, :id, :email)
+  .actions = f.submit 'Save'
