@@ -1,5 +1,5 @@
 class DigsController < ApplicationController
-  before_action :set_dig, only: [:show, :edit, :update, :destroy]
+  before_action :set_dig, only: [:show, :edit, :update, :destroy, :upvote]
 
   # GET /digs
   def index
@@ -45,10 +45,16 @@ class DigsController < ApplicationController
     redirect_to digs_url, notice: 'Dig was successfully destroyed.'
   end
 
+  # POST /digs/1/upvote
+  def upvote
+    @dig.votes.create!(voter: current_user, amount: 1)
+    redirect_to digs_url, notice: 'Dig was successfully "Wykopany".'
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_dig
-      @dig = current_user.digs.find(params[:id])
+      @dig = current_user.digs.find(params[:id] || params[:dig_id])
     end
 
     # Only allow a trusted parameter "white list" through.
