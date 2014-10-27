@@ -1,7 +1,7 @@
 # WykopApp
 
-Simple app for show some power ActiveRecord with silly interface to play around.
-It is created for second workshop for KNTAW (Koło Naukowe Tworzenia Aplikacji Webowych).
+Simple app for show some ActiveRecord power, with silly interface to play around.
+It's created for second workshop for KNTAW.
 It uses rails.
 
 ## Setup
@@ -28,10 +28,10 @@ Application is than available at `localhost:3000`
 # Yes, rails gives some help
 rails --help
 
-# Create new app without javasctipt, unit tests, and with configured mysql
+# Create new app without javascripts, unit tests, and with configured mysql
 rails new -J -T -d mysql .
 
-# Next commands generate basic models relation in the app
+# Next commands generate basic models relation in the application
 rails g scaffold user email:string:uniq password
 
 rails g scaffold dig title body:text owner:references:index
