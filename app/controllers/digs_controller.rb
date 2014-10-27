@@ -21,7 +21,7 @@ class DigsController < ApplicationController
 
   # POST /digs
   def create
-    @dig = Dig.new(dig_params)
+    @dig = current_user.digs.new(dig_params)
 
     if @dig.save
       redirect_to @dig, notice: 'Dig was successfully created.'
@@ -48,7 +48,7 @@ class DigsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_dig
-      @dig = Dig.find(params[:id])
+      @dig = current_user.digs.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.

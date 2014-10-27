@@ -1,25 +1,21 @@
-h1 Listing digs
+h1 Wykopy
 
 table
   thead
     tr
-      th Title
-      th Body
-      th Owner
-      th
-      th
-      th
+      th Tytuł
+      th Treść
+      th Ilość komci
+      th Data dodania
 
   tbody
     - @digs.each do |dig|
       tr
         td = dig.title
         td = dig.body
-        td = dig.owner.email
-        td = link_to 'Show', dig
-        td = link_to 'Edit', edit_dig_path(dig)
-        td = link_to 'Destroy', dig, data: {:confirm => 'Are you sure?'}, :method => :delete
+        td = dig.comments.count
+        td = dig.created_at
 
 br
 
-= link_to 'New Dig', new_dig_path
+= link_to 'Dodaj Nowy', new_dig_path
