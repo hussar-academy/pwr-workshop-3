@@ -4,5 +4,5 @@ class Comment < ActiveRecord::Base
   has_many :votes, as: :votable, dependent: :destroy
   has_many :voters, through: :votes
 
-  validates :title, :owner_id, presence: true
+  validates :body, :dig_id, :owner_id, presence: true
 end

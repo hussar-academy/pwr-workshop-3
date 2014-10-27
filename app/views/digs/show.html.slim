@@ -10,6 +10,23 @@ p
   strong Owner:
   = @dig.owner.email
 
+hr
+h2 Nowy komentarz
+= form_for @dig.comments.new do |f|
+  .field
+    = f.hidden_field :dig_id, value: @dig.id
+    = f.text_area :body
+  .field
+    = f.submit 'Dodaj'
+
+hr
+h2 Komentarze
+- @dig.comments.order('created_at DESC').each do |comment|
+  - if comment.persisted?
+    div = comment.body
+    | dodano #{comment.created_at}, przez #{comment.owner.email}
+
+br
 = link_to 'Edytuj', edit_dig_path(@dig)
 '|
 = link_to 'Lista', digs_path

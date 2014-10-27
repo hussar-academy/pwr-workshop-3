@@ -11,7 +11,7 @@ table
   tbody
     - @digs.each do |dig|
       tr
-        td = dig.title
+        td = link_to dig.title, dig
         td = dig.body
         td = dig.comments.count
         td = dig.created_at

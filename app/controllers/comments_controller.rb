@@ -21,10 +21,10 @@ class CommentsController < ApplicationController
 
   # POST /comments
   def create
-    @comment = Comment.new(comment_params)
+    @comment = current_user.comments.new(comment_params)
 
     if @comment.save
-      redirect_to @comment, notice: 'Comment was successfully created.'
+      redirect_to :back, notice: 'Comment was successfully created.'
     else
       render :new
     end
@@ -48,11 +48,15 @@ class CommentsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_comment
-      @comment = Comment.find(params[:id])
+      @comment = current_user.comments.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
     def comment_params
-      params.require(:comment).permit(:body, :dig_id, :owner_id)
+      params.require(:comment).permit(
+        :body, :dig_id, :owner_id
+      ).merge(
+        owner: current_user
+      )
     end
 end
