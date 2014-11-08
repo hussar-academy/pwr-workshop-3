@@ -1,2 +1,7 @@
-| INDEX PAGE
+div ng-controller="DigsCtrl"
+  div ng-repeat="dig in digs"
+    h4 ng-bind="dig.title"
+    span ng-bind="dig.body"
+
+    hr
 
