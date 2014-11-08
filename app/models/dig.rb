@@ -4,5 +4,6 @@ class Dig < ActiveRecord::Base
   has_many :voters, through: :votes
   has_many :comments, dependent: :destroy
 
-  validates :title, :body, :owner_id, presence: true
+  validates :title, :owner_id, presence: true
 end
+
