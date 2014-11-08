@@ -1,0 +1,22 @@
+default: &default
+  adapter: mysql2
+  host: localhost
+  encoding: utf8
+  pool: 5
+  username:
+  password:
+
+development:
+  <<: *default
+  database: kntaw_digg_development
+
+test:
+  <<: *default
+  database: kntaw_digg_test
+
+production:
+  <<: *default
+  database: kntaw_digg_production
+  username:
+  password: <%= ENV['SERVER_DATABASE_PASSWORD'] %>
+
