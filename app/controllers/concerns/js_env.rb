@@ -11,7 +11,8 @@ module JsEnv
   def js_env
     data = {
       env: Rails.env,
-      templates: templates
+      templates: templates,
+      host: Figaro.env.host
     }
 
     <<-EOS.html_safe

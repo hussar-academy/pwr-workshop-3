@@ -3,6 +3,7 @@ source 'https://rails-assets.org'
 
 gem 'rails', '4.1.6'
 gem 'mysql2'
+gem 'figaro'
 
 gem 'coffee-rails'
 gem 'sass-rails', '~> 4.0.3'
