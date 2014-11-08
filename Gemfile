@@ -15,5 +15,6 @@ gem 'rails-assets-angularjs', '~> 1.3.2'
 group :development, :test do
   gem 'factory_girl_rails'
   gem 'rspec-rails'
+  gem 'pry'
 end
 
