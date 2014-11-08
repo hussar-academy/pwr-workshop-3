@@ -5,7 +5,7 @@ html ng-app="DigApp"
     = stylesheet_link_tag 'application', media: 'all'
     = csrf_meta_tags
   body
-    = yield
+    div ui-view=""
 
     = javascript_include_tag 'application'
     = js_env

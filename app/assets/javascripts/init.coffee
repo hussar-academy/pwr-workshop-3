@@ -1,4 +1,4 @@
-angular.module 'DigApp', []
+angular.module 'DigApp', ['ui.router']
 
 angular.module('DigApp').config ($provide, $httpProvider, Rails) ->
   $provide.factory 'railsAssetsInterceptor', ->

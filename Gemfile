@@ -11,6 +11,7 @@ gem 'slim-rails'
 gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'rails-assets-angularjs', '~> 1.3.2'
+gem 'rails-assets-ui-router', '~> 0.2.9'
 
 group :development, :test do
   gem 'factory_girl_rails'
