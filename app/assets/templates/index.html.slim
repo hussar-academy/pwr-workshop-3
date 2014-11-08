@@ -1,7 +1,41 @@
 div ng-controller="DigsCtrl"
   div ng-repeat="dig in digs"
-    h4 ng-bind="dig.title"
-    span ng-bind="dig.body"
+    div ng-if="editedDigID != dig.id"
+      h4 ng-bind="dig.title"
+      span ng-bind="dig.body"
+
+      button type="button" ng-click="edit(dig)" Edit
+      button type="button" ng-click="destroy(dig)" &times;
+
+    div ng-if="editedDigID == dig.id"
+      form ng-submit="update(dig)"
+        legend Edit dig
+
+        label Title
+        input type="text" ng-model="dig.title"
+        br
+        label Body
+        textarea ng-model="dig.body"
+        br
+        label Owner ID
+        input type="number" ng-model="dig.owner_id"
+        br
+        input type="submit" value="Save"
+        button type="button" ng-click="cancelEdit()" Cancel
 
     hr
+
+  form ng-submit="create()"
+    legend New dig
+
+    label Title
+    input type="text" ng-model="newDig.title"
+    br
+    label Body
+    textarea ng-model="newDig.body"
+    br
+    label Owner ID
+    input type="number" ng-model="newDig.owner_id"
+    br
+    input type="submit" value="Save"
 
