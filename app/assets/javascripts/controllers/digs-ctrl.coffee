@@ -29,3 +29,8 @@ angular.module('DigApp').controller 'DigsCtrl', ($scope, $http, Rails) ->
       index = $scope.digs.indexOf(dig)
       $scope.digs.splice(index, 1)
 
+  $scope.vote = (dig, amount) ->
+    $http.post("//#{Rails.host}/api/digs/#{dig.id}/vote", { vote: amount }).success (response) ->
+      console.log response
+      dig.rating += amount
+

@@ -21,6 +21,14 @@ class Api::DigsController < ApplicationController
     head 200
   end
 
+  def vote
+    dig = Dig.find(params[:id])
+    random_user = User.all.sample(1).first
+    dig.votes.create! amount: params[:vote], voter: random_user
+
+    head 200
+  end
+
   private
     def dig_params
       params.require(:dig).permit(:title, :body, :owner_id)
