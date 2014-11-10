@@ -22,7 +22,7 @@ module JsEnv
     data = {
       env: Rails.env,
       templates: templates,
-      host: Figaro.env.host
+      host: ENVied.HOST
     }
 
     <<-EOS.html_safe
