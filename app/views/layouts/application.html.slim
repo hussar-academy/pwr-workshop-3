@@ -4,7 +4,8 @@ html ng-app="DigApp"
     base href="/"
     title KNTAW Digg
     = stylesheet_link_tag 'application', media: 'all'
-    = csrf_meta_tags
+    /* Beware, CSRF is disabled */
+    /* = csrf_meta_tags */
   body
     div ui-view=""
 
