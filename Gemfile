@@ -1,24 +1,23 @@
 source 'https://rubygems.org'
+source 'https://rails-assets.org'
 
+gem 'rails', '~> 4.1.6'
+gem 'mysql2', '~> 0.3.16'
+gem 'envied', '~> 0.8.1'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.6'
-# Use mysql as the database for Active Record
-gem 'mysql2'
-# Use SCSS for stylesheets
+gem 'coffee-rails', '~> 4.0.1'
 gem 'sass-rails', '~> 4.0.3'
-# Use Uglifier as compressor for JavaScript assets
+gem 'slim-rails', '~> 2.1.0'
+gem 'ngannotate-rails', '~> 0.9.9'
+
 gem 'uglifier', '>= 1.3.0'
-# bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0',        group: :doc
-
-# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-gem 'spring',      group: :development
-
-gem 'slim-rails'
-gem 'jquery-rails'
+gem 'jquery-rails', '~> 3.1.2'
+gem 'rails-assets-angularjs', '~> 1.3.2'
+gem 'rails-assets-ui-router', '~> 0.2.9'
 
 group :development, :test do
-  gem 'factory_girl_rails'
-  gem 'rspec-rails'
+  gem 'factory_girl_rails', '~> 4.4.1'
+  gem 'rspec-rails', '~> 3.0.2'
+  gem 'pry', '~> 0.10.1'
 end
+

@@ -6,7 +6,7 @@ It uses rails.
 
 ## Setup
 
-It requires `MySQL` to work properly
+It requires `Postgres` to work properly. Before the initial setup, please ensure that `config/database.yml` has correct informations.
 
 ### Initial setup
 ```

@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-  resources :comments
-
-  resources :digs do
-    post :upvote
+  namespace :api do
   end
 
-  resources :users
+  get 'api' => proc { [404, {}, ['Invalid API endpoint']] }
+  get 'api/*path' => proc { [404, {}, ['Invalid API endpoint']] }
 
-  root 'users#index'
+  root 'home#index'
+  get '*path', to: 'home#index'
 end
+
