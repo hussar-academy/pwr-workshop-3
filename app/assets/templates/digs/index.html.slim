@@ -1,2 +1,4 @@
 h1 Digs
-p ng-bind='test'
+ul
+  li ng-repeat='dig in digs'
+    span ng-bind='dig.title'
