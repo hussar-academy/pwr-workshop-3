@@ -1,4 +1,16 @@
 h1 Digs
+
+p
+  button type='button' ng-click='new()'
+    | Add
 ul
   li ng-repeat='dig in digs'
     span ng-bind='dig.title'
+    button type='button' ng-click='edit(dig)' ng-show='!dig._edit && !dig._new'
+      | Edit
+    button type='button' ng-click="save(dig)" ng-show='dig._edit || dig._new'
+      | Save
+    button type='button' ng-click='delete(dig)' ng-show='!dig._edit && !dig._new'
+      | Delete
+    div ng-show='dig._edit || dig._new'
+      input ng-model='dig.title'
