@@ -6,3 +6,8 @@ angular.module('DigApp').config ($stateProvider, $urlRouterProvider) ->
       url: '/',
       templateUrl: '/assets/index.html'
 
+    .state 'digs',
+      url: '/digs',
+      templateUrl: 'assets/digs/index.html',
+      controller: 'DigsCtrl',
+
