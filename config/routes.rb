@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   namespace :api do
+    resources :digs
   end
 
   get 'api' => proc { [404, {}, ['Invalid API endpoint']] }
