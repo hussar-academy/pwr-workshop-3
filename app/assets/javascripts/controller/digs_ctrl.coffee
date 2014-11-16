@@ -7,6 +7,11 @@ angular.module('DigApp').controller 'DigsCtrl', ($scope, Dig) ->
     dig._edit = true
 
   $scope.save = (dig) ->
+    if dig._edit
+      Dig.update(dig)
+    if dig._new
+      Dig.create(dig).then (responese) ->
+        dig.id = responese.data.id
     dig._edit = false
     dig._new = false
 
@@ -18,4 +23,5 @@ angular.module('DigApp').controller 'DigsCtrl', ($scope, Dig) ->
     angular.forEach $scope.digs, (val) ->
       if dig.id == val.id
         $scope.digs.splice(i, 1)
+        Dig.delete(dig)
       i += 1
