@@ -80,6 +80,14 @@ end
 Wywołanie akcji `index` po wejściu (wysłaniu requesta GET) na ścieżkę `/api/kittens`.
 
 ```ruby
+namespace :api do
+  post 'kittens/:id/vote', to: 'kittens#vote'
+end
+```
+
+Wywołanie akcji `vote` po wysłaniu requesta POST razem z przekazaniem `id` kotka – przykładowa ścieżka: `/api/kittens/1/vote`
+
+```ruby
 # config/routes.rb
 namespace :api do
   resources :kittens
