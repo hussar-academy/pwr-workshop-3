@@ -1,42 +1,41 @@
+# KNTAW
+This application was created for learning purposes for `Koło Naukowe Tworzenia Aplikacji Webowych`: the academic circle in Politechnika Wrocławska.
+
 # WykopApp
+This application is the changed verion of [pwr-workshop-2](https://github.com/hussar-academy/pwr-workshop-2). You can see the list of most changes in [this pull request](https://github.com/hussar-academy/pwr-workshop-3/pull/1/files).
 
-Simple app for show some ActiveRecord power, with silly interface to play around.
-It's created for second workshop for KNTAW.
-It uses rails.
+# Setup
 
-## Setup
-
-It requires `Postgres` to work properly. Before the initial setup, please ensure that `config/database.yml` has correct informations.
-
-### Initial setup
 ```
-bundle
-bundle exec rake db:create
-bundle exec rake db:migrate
+$ git clone git@github.com:hussar-academy/pwr-workshop-3.git
+$ cd pwr-workshop-3
+$ bundle install
+$ bundle exec rake db:setup
+$ bundle exec rails s
 ```
 
-### Run the server
+## Database
+
+The default database adapter is MySQL. If you want to use Postgresql or SQLite you can find configs in `config/` directory.
+
 ```
-rails s
+$ ls config/
+database.yml
+database.psql.yml
+database.sqlite.yml
 ```
-Application is than available at `localhost:3000`
 
+The `database.yml` file is config that is used, so you can just replace it with the one you wish to use.
 
-### A few usefull commands
+# [Assignments](https://github.com/hussar-academy/pwr-workshop-3/blob/master/assignments.md)
 
-```bash
-# Yes, rails gives some help
-rails --help
+Assignments to solve.
 
-# Create new app without javascripts, unit tests, and with configured mysql
-rails new -J -T -d mysql .
+# [Cheatsheet](https://github.com/hussar-academy/pwr-workshop-3/blob/master/cheatsheet.md)
 
-# Next commands generate basic models relation in the application
-rails g scaffold user email:string:uniq password
+Cheatsheet with tips helpful in solving the assignments.
 
-rails g scaffold dig title body:text owner:references:index
+# Feedback
 
-rails g scaffold comment body:text owner:references:index dig:references:index
+We would love your feedback after the workshop. It's very important to us, so we can improve for our next meetings :)
 
-rails g model Vote user:references:index votable:references{polymorphic}:index amount:integer
-```
