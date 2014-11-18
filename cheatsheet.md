@@ -41,7 +41,7 @@ Wysłanie formularza (submit) wywoła akcję `$scope.create` zdefiniowaną w con
 # AngularJS
 ```coffee
 # app/assets/javascripts/controllers/kittens-ctrl.coffee
-angular.module(`MyApp`).controller `KittensCtrl`, ($scope, $http) ->
+angular.module('MyApp').controller 'KittensCtrl', ($scope, $http) ->
   $scope.kittensCount = 2
 ```
 
