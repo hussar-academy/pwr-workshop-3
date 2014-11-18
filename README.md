@@ -35,7 +35,7 @@ Assignments to solve.
 
 Cheatsheet with tips helpful in solving the assignments.
 
-[!directories](directories.png)
+![directories](directories.png)
 
 # Feedback
 
