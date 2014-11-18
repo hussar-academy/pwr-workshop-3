@@ -51,7 +51,7 @@ Utworzenie controllera w Angularze. Nazwa modułu `MyApp` musi zgadzać się z n
 # app/assets/javascripts/controllers/kittens-ctrl.coffee
 $scope.newKitten = {}
 $scope.create = ->
-  $http.post("/api/kittens`, { kittens: $scope.newKitten }).success (response) ->
+  $http.post("/api/kittens", { kittens: $scope.newKitten }).success (response) ->
     …
 ```
 Utworzenie akcji w controllerze Angularowym. Przypisanie zmiennej lub funkcji do obiektu `$scope` sprawi, że widok będzie miał do tego dostęp.
