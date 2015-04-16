@@ -35,6 +35,8 @@ Assignments to solve.
 
 Cheatsheet with tips helpful in solving the assignments.
 
+# [Movies](https://www.youtube.com/playlist?list=PL9H6ViTMTQ_BgBR3p1ApkZZR8887JzWEd)
+
 ![directories](directories.png)
 
 # Feedback
